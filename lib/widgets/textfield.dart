@@ -9,11 +9,14 @@ class CustomTextField extends StatelessWidget {
     required this.label,
     this.controller,
     this.isPassword = false,
+    this.isName = false,
   }) : super(key: key);
 
   final String hint;
   final String label;
   final bool isPassword;
+  final bool isName;
+
   final TextEditingController? controller;
 
   @override
@@ -30,7 +33,12 @@ class CustomTextField extends StatelessWidget {
             const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         // labelText: label,
         labelStyle: TextStyle(color: Colors.blue),
-        prefixIcon: Icon(isPassword ? Icons.lock : Icons.email,
+        prefixIcon: Icon(
+            isPassword
+                ? Icons.lock
+                : isName
+                    ? Icons.person
+                    : Icons.email,
             color: Colors.blue),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),

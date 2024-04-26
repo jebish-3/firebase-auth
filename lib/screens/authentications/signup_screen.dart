@@ -56,6 +56,7 @@ class _SignupScreenState extends State<SignupScreen> {
               CustomTextField(
                 hint: "Enter Name",
                 label: "Name",
+                isName: true,
                 controller: _name,
               ),
               const SizedBox(height: 20),
